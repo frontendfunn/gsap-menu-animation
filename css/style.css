@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+html,
+body {
+  height: 100%;
+  font-family: "Inter", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dddddd;
+}
+
+.menu {
+  background-color: #000000;
+  display: inline-flex;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.menu .link {
+  display: inline-flex;
+  padding: 2rem;
+  font-size: 2rem;
+  color: gray;
+  position: relative;
+}
+
+.menu .link .icon {
+  stroke: gray;
+  height: 42px;
+  width: 42px;
+}
+
+/* active */
+.menu .link.active .icon {
+  stroke: white;
+}
+
+.menu .slider {
+  position: absolute;
+  height: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  margin: auto;
+  transform-style: preserve-3d;
+}
+
+.menu .slider .focus {
+  transform-style: preserve-3d;
+  transform-origin: top;
+  transform: perspective(200px) translateY(1px) rotateX(65deg);
+  background-image: linear-gradient(
+    -180deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(0, 0, 0, 0) 90%
+  );
+}
+
+/* inspired */
+.inspired {
+  position: fixed;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
+  background-color: #000000;
+}
+.inspired a {
+  display: flex;
+  padding: 1rem;
+  color: #ffffff;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.support {
+  position: fixed;
+  top: 0px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background-color: #dd0000;
+  text-align: center;
+  color: #ffffff;
+}
+
+.support a {
+  display: flex;
+  padding: 0.5rem 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  animation: supportAnimate 2s ease-in-out infinite;
+}
+
+@keyframes supportAnimate {
+  0%,
+  100% {
+    background-color: #dd0000;
+  }
+  50% {
+    background-color: #0000dd;
+  }
+}
